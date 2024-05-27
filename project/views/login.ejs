@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        axios.interceptors.request.use(function (config) {
+            return config;
+        }, function (error) {
+            return Promise.reject(error);
+        });
+
+        axios.interceptors.response.use(function (response) {
+            const {authorization } = response.headers
+            authorization && localStorage.setItem("token",authorization)
+            return response;
+        }, function (error) {
+            return Promise.reject(error);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="logdiv"><h1>Login Page</h1>
+        <div id="logindiv">Account:<input type="text" id="user_name" /></div>
+        <div id="logindiv">Password:<input type="text" id="ps" /></div>
+        <div id="logindiv"><button id="login">Verify</button></div>
+    </div>
+
+    <script>
+        var user_name = document.querySelector("#user_name")
+        var ps = document.querySelector("#ps")
+        var login = document.querySelector("#login")
+
+        login.onclick = () => {
+    axios.post("/api/login", {
+        "username": user_name.value,
+        "password": ps.value,
+    }).then(res => {
+        console.log(res.data);
+        if (res.data.ok === 1) {
+            const token = res.headers.authorization;
+            if (token) {
+                localStorage.setItem("token", token);
+            }
+            switch(res.data.userType) {
+                case 'Sender':
+                case 'Recipient':
+                    location.href = "/index";
+                    break;
+                case 'LogisticsCompanyStaff':
+                    location.href = "/logistics";
+                    break;
+                default:
+                    location.href = "/courier";
+            }
+        } else {
+            alert("Verification failed");
+        }
+    }).catch(error => {
+        console.error('Error during login:', error);
+        alert("Login error, please try again.");
+    });
+};
+
+    </script>
+</body>
+
+</html>

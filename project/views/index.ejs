@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div id="bar">
+      Courier Station Management System
+    </div>
+    <div>
+      <div style="float:right; clear: both;">
+        <div id="userInfo" ></div><br>
+        <button id="logout">log out</button></div>
+      
+  <div id="senderdiv">
+    <h1>Sender Management</h1>
+    <div id="insertdiv"> <h1>Create New Order</h1>
+      <div id="row">Sender ID:<input id="senderID"/></div>
+      <div id="row">Recipient ID:<input id="recipientID"/></div>
+      <div id="row"><button id="create">Create</button></div>
+      
+    </div>
+
+    
+    <div id="updatediv"><h1>Manage parcel</h1>
+      <div id="row">Sender ID:<input id="msenderID"/></div>
+      <div id="row">Recipient ID:<input id="mrecipientID"/></div>
+      <div><button id="update">modify</button><button id="cancel">cancel</button></div>
+    </div>
+
+    <div id="displayform"><br><br>
+
+      
+    <h1>Parcel Information</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <td><b>ID</b></td>
+          <td><b>Tracking Number</b></td>
+          <td><b>Sender</b></td>
+          <td><b>Recipient</b></td>
+          <td><b>LogisticsCompanyStaff</b></td>
+          <td><b>CourierStationEmployee</b></td>
+          <td><b>Status</b></td>
+          <td><b>PickUpZone</b></td>
+        </tr>
+      </thead>
+      <tbody id="table1">
+
+      </tbody>
+    </table>
+  </div>
+  <br><br><br>
+</div>
+
+<div id="recipientdiv">
+  <br><br><br>
+  <h1>Recipient Management</h1>
+  <div id="displayform2"><br><br>
+  <h1>Parcel Information</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <td><b>ID</b></td>
+        <td><b>Tracking Number</b></td>
+        <td><b>Sender</b></td>
+        <td><b>Recipient</b></td>
+        <td><b>LogisticsCompanyStaff</b></td>
+        <td><b>CourierStationEmployee</b></td>
+        <td><b>Status</b></td>
+        <td><b>PickUpZone</b></td>
+      </tr>
+    </thead>
+    <tbody id="table2">
+
+    </tbody>
+  </table>
+<br><br><br><br><br><br>
+</div>
+</div>
+    <script src="/javascripts/javasript.js">
+    </script>
+  </body>
+</html>

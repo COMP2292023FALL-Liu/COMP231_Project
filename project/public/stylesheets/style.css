@@ -1,0 +1,112 @@
+/* Liujiacheng 2022110204 */
+body {
+  color:white;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+}
+
+#bar{
+  margin: 0;
+  background-color:white;
+  color: black;
+  font-size: 300%;
+  text-align: center;
+  line-height: 240%;
+  margin-bottom: 20px;
+  font-weight:750;
+}
+#insertdiv{
+  margin: 20px 20px 20px 60px;
+  border: double white 5px;
+  float: left;
+  padding: 20px; 
+  width: 40%;
+}
+#updatediv{
+  margin: 20px 60px 20px 20px;
+  border: double black 5px;
+  padding: 20px; 
+  display: none;
+  width: 40%;
+  float: right;
+  background-color: white;
+  color: black;
+}
+
+h1{
+  font-size: 2.5em;
+  text-align: center;
+}
+thead{
+    background-color: white;
+    color: black;
+}
+td{
+  padding: 10px;
+}
+a {
+  color: #00B7FF;
+}
+#row{
+  padding: 10px;
+}
+input{
+  margin-left: 10px;
+}
+#displayform,#displayform2{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+   clear: both;
+}
+table{
+  border: white solid 3px;
+  width: 90%;
+  margin: auto;
+}
+#update,#cancel{
+  background-color: white;
+  color: black;
+  border: inset 3px black;
+}
+#update:hover,#cancel:hover{
+  border: outset 3px black;
+}
+#update:active,#cancel:active{
+  border: inset 3px black;
+}
+button{
+  margin-left: 20px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border: inset 3px white;
+}
+button:hover{
+  border: outset 3px white;
+}
+button:active{
+  border: inset 3px white;
+}
+#logdiv{
+  border: double black 5px;
+  background-color: white;
+  color: black;
+  width: 40%;
+  margin: 150px auto;
+  text-align: center;
+}
+#logindiv{
+  width: 80%;
+  margin: 40px auto ;
+  text-align: center;
+}
+#recipientdiv{
+  background-color: white;
+  color: black;
+}
+#recipientdiv table{
+  background-color: black;
+  color: white;
+}
